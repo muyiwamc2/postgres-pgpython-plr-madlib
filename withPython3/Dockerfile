@@ -15,7 +15,7 @@ RUN apt-get install -y libsybdb5 freetds-dev freetds-common
 #RUN make USE_PGXS=1
 #RUN sudo make USE_PGXS=1 install
 #RUN cd ..
-  
+#data in volume location /var/lib/postgresql/data
 ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 5432
 CMD ["postgres"]
