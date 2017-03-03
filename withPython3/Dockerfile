@@ -1,18 +1,10 @@
-FROM postgres:9.6
+FROM ooolumuyiwa/postgres-pgpython-plr-madlib
 ENV PG_MAJOR 9.6
 
-RUN apt-get update \
-                  && apt-get install -y postgresql-$PG_MAJOR-plr \
-                  && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && \
-    apt-get install -y cmake pgxnclient postgresql-plpython-9.6 postgresql-server-dev-9.6 g++ m4
-    
-RUN pgxn install madlib
 
 RUN apt-get update &&\
   apt-get install -y postgresql-plpython3-9.6
-RUN apt-get install libsybdb5 freetds-dev freetds-common
+RUN apt-get install -y libsybdb5 freetds-dev freetds-common
 
 RUN pgxn install tds_fdw
   
