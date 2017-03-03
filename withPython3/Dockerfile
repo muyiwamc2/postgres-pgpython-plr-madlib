@@ -11,7 +11,7 @@ RUN apt-get update && \
 RUN pgxn install madlib
 
 RUN apt-get update &&\
-  apt-get install postgresql-plpython3-9.6
+  apt-get install -y postgresql-plpython3-9.6
 RUN apt-get install libsybdb5 freetds-dev freetds-common
 
 RUN pgxn install tds_fdw
